@@ -44,11 +44,11 @@ const HeroSection = () => {
         <span className="block text-red-500/40 text-xs tracking-[0.3em] uppercase mt-3">— Weak Hero Class</span>
       </div>
 
-      {/* 2. CONTENT WRAPPER */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 md:px-12 py-6 sm:py-8 flex flex-col h-screen">
+      {/* 2. HEADER WRAPPER — behind cutout on mobile */}
+      <div className="hero-header-wrapper absolute inset-0 container mx-auto px-4 sm:px-6 md:px-12 py-6 sm:py-8 pointer-events-none">
         
         {/* --- HEADER --- */}
-        <header className="header-cinematic flex items-center justify-between py-3 sm:py-5 px-4 sm:px-6 md:px-10 rounded-full mt-2 backdrop-blur-md bg-cyan-950/30 border border-cyan-500/10 shadow-lg shadow-black/30 relative z-50">
+        <header className="header-cinematic flex items-center justify-between py-3 sm:py-5 px-4 sm:px-6 md:px-10 rounded-full mt-2 backdrop-blur-md bg-cyan-950/30 border border-cyan-500/10 shadow-lg shadow-black/30 hero-header pointer-events-auto">
           <div className="text-base sm:text-lg md:text-xl font-bold tracking-[0.25em] sm:tracking-[0.35em] uppercase">
             <span className="text-cyan-100">Omal</span>{' '}
             <span className="text-cyan-100/40">Maleesha</span>
@@ -73,7 +73,7 @@ const HeroSection = () => {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden text-cyan-200/60 hover:text-cyan-300 transition-colors z-50"
+            className="md:hidden text-cyan-200/60 hover:text-cyan-300 transition-colors hero-hamburger"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
@@ -81,7 +81,7 @@ const HeroSection = () => {
 
           {/* Mobile menu overlay */}
           {menuOpen && (
-            <div className="mobile-menu-overlay absolute top-full right-0 mt-3 w-56 rounded-2xl backdrop-blur-xl bg-cyan-950/80 border border-cyan-500/15 shadow-2xl shadow-black/50 p-4 md:hidden z-50">
+            <div className="mobile-menu-overlay hero-mobile-menu absolute top-full right-0 mt-3 w-56 rounded-2xl backdrop-blur-xl bg-cyan-950/80 border border-cyan-500/15 shadow-2xl shadow-black/50 p-4 md:hidden">
               <ul className="flex flex-col gap-4 text-sm font-medium tracking-[0.2em] uppercase text-cyan-200/60">
                 {[
                   { label: 'Home', path: '/' },
@@ -102,9 +102,18 @@ const HeroSection = () => {
             </div>
           )}
         </header>
+      </div>
+
+      {/* 3. CONTENT WRAPPER — on top of cutout on mobile */}
+      <div className="hero-content-wrapper absolute inset-0 container mx-auto px-4 sm:px-6 md:px-12 py-6 sm:py-8 flex flex-col h-screen pointer-events-none">
+        
+        {/* Spacer matching header height */}
+        <div className="py-3 sm:py-5 mt-2 mb-0">
+          <div className="h-[2.75rem] sm:h-[3.5rem]"></div>
+        </div>
 
         {/* --- MAIN HERO CONTENT --- */}
-        <main className="flex-grow flex flex-col justify-center py-4 md:py-6">
+        <main className="hero-main-content flex-grow flex flex-col justify-center py-4 md:py-6 pointer-events-auto">
           
           <div className="max-w-2xl space-y-4 sm:space-y-5">
 
@@ -216,9 +225,9 @@ const HeroSection = () => {
         </main>
 
         {/* --- FOOTER: Social Icons --- */}
-        <footer className="py-4 sm:py-6 border-t border-cyan-500/10 flex justify-between items-center text-xs sm:text-sm text-cyan-100/50 sm:text-cyan-200/30">
+        <footer className="py-4 sm:py-6 border-t border-cyan-500/10 flex justify-between items-center text-xs sm:text-sm text-cyan-100/50 sm:text-cyan-200/30 pointer-events-auto">
           <div>© 2026 Omal Maleesha.</div>
-          <div className="flex items-center gap-4 sm:gap-6">
+          <div className="hero-footer-icons flex items-center gap-4 sm:gap-6">
             <a href="#" className="text-cyan-100/50 sm:text-cyan-200/30 hover:text-cyan-400 transition-colors duration-300"><FaLinkedinIn size={16} /></a>
             <a href="#" className="text-cyan-100/50 sm:text-cyan-200/30 hover:text-cyan-400 transition-colors duration-300"><FaGithub size={16} /></a>
             <a href="#" className="text-cyan-100/50 sm:text-cyan-200/30 hover:text-cyan-400 transition-colors duration-300"><FaBehance size={16} /></a>

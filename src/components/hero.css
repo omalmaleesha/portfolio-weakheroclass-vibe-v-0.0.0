@@ -15,8 +15,16 @@
 }
 
 .header-cinematic {
+  position: relative;
+  z-index: 40;
   animation: headerReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+@media (min-width: 640px) {
+  .header-cinematic {
+    z-index: 50;
+  }
 }
 
 .header-cinematic:hover {
@@ -27,7 +35,7 @@
 /* ── Person cutout — cold teal glow with subtle red edge (no animation) ── */
 
 .person-cutout {
-  z-index: 1;
+  z-index: 55;
   filter: 
     drop-shadow(0 0 6px rgba(6, 182, 212, 0.5))
     drop-shadow(0 0 20px rgba(6, 182, 212, 0.2))
@@ -41,9 +49,42 @@
   }
 }
 
+/* Mobile: footer icons on top of the cutout */
+.hero-footer-icons {
+  position: relative;
+}
+
+/* Mobile: header behind cutout, content above cutout */
+.hero-header-wrapper {
+  z-index: 40;
+}
+
+.hero-content-wrapper {
+  z-index: 60;
+}
+
+@media (min-width: 640px) {
+  .hero-header-wrapper {
+    z-index: 50;
+  }
+  .hero-content-wrapper {
+    z-index: auto;
+  }
+}
+
 /* ── Mobile menu overlay ── */
 .mobile-menu-overlay {
   animation: menuFadeIn 0.25s ease forwards;
+}
+
+/* Mobile: hamburger + menu on top of cutout */
+.hero-hamburger {
+  position: relative;
+  z-index: 60;
+}
+
+.hero-mobile-menu {
+  z-index: 60;
 }
 
 @keyframes menuFadeIn {
