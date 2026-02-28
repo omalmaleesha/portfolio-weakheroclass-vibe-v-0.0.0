@@ -19,11 +19,11 @@ const HeroSection = () => {
       {/* 1. DARK TEAL OVERLAY: Stronger on mobile so text is readable over cutout */}
       <div className="absolute inset-0 bg-gradient-to-b from-cyan-950/90 via-slate-950/85 to-slate-950/95 sm:from-cyan-950/80 sm:via-slate-950/70 sm:to-slate-950/90 z-0"></div>
 
-      {/* PERSON CUTOUT — visible on all screens */}
+      {/* PERSON CUTOUT — on top of everything including header */}
       <img 
         src="/backgroundperson.png" 
         alt="Profile" 
-        className="person-cutout absolute inset-0 w-full h-full object-cover object-center z-20 pointer-events-none select-none"
+        className="person-cutout absolute inset-0 w-full h-full object-cover object-center z-50 pointer-events-none select-none"
       />
 
       {/* Quote — hidden on mobile, shown on md+ */}
@@ -36,8 +36,8 @@ const HeroSection = () => {
         <span className="block text-red-500/40 text-xs tracking-[0.3em] uppercase mt-3">— Weak Hero Class</span>
       </div>
 
-      {/* 2. CONTENT WRAPPER: Above cutout so text is always readable */}
-      <div className="relative z-30 container mx-auto px-4 sm:px-6 md:px-12 py-6 sm:py-8 flex flex-col h-screen">
+      {/* 2. CONTENT WRAPPER */}
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 md:px-12 py-6 sm:py-8 flex flex-col h-screen">
         
         {/* --- HEADER --- */}
         <header className="header-cinematic flex items-center justify-between py-3 sm:py-5 px-4 sm:px-6 md:px-10 rounded-full mt-2 backdrop-blur-md bg-cyan-950/30 border border-cyan-500/10 shadow-lg shadow-black/30 relative z-50">
