@@ -67,7 +67,7 @@ const Projects = () => {
     <section
       className="relative bg-slate-950 text-white h-screen overflow-hidden font-sans"
       style={{
-        backgroundImage: "url('/projects.jpg')",
+        backgroundImage: `url('${import.meta.env.BASE_URL}projects.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -78,7 +78,7 @@ const Projects = () => {
       {/* Person cutout — layered on top of everything, hidden on small screens */}
       <div className="proj-person-cutout absolute inset-0 z-30 pointer-events-none hidden sm:block">
         <img
-          src="/projectsbackgroundremoves.png"
+          src={`${import.meta.env.BASE_URL}projectsbackgroundremoves.png`}
           alt=""
           className="absolute inset-0 w-full h-full object-cover object-center"
         />

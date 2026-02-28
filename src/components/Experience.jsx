@@ -65,7 +65,7 @@ const Experience = () => {
       id="experience"
       className="relative bg-slate-950 text-white h-screen overflow-hidden font-sans"
       style={{
-        backgroundImage: "url('/experincebackground.jpg')",
+        backgroundImage: `url('${import.meta.env.BASE_URL}experincebackground.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -75,7 +75,7 @@ const Experience = () => {
 
       {/* Person cutout — same layered effect as Hero, hidden on small screens */}
       <img 
-        src="/experincebackgroundremoved.png" 
+        src={`${import.meta.env.BASE_URL}experincebackgroundremoved.png`}
         alt="Experience" 
         className="exp-person-cutout absolute inset-0 w-full h-full object-cover object-center z-20 pointer-events-none select-none hidden sm:block"
       />

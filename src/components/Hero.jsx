@@ -11,7 +11,7 @@ const HeroSection = () => {
     <div 
       className="relative bg-slate-950 text-white h-screen overflow-hidden font-sans"
       style={{
-        backgroundImage: "url('/background.jpg')",
+        backgroundImage: `url('${import.meta.env.BASE_URL}background.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -21,7 +21,7 @@ const HeroSection = () => {
 
       {/* PERSON CUTOUT — on top of everything including header */}
       <img 
-        src="/backgroundperson.png" 
+        src={`${import.meta.env.BASE_URL}backgroundperson.png`}
         alt="Profile" 
         className="person-cutout absolute inset-0 w-full h-full object-cover object-center z-50 pointer-events-none select-none"
       />
