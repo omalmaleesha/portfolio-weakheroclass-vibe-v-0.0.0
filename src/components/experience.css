@@ -1,0 +1,68 @@
+/* ── Experience section — Weak Hero Class vibe ── */
+
+/* Staggered reveal animations (reusing same pattern as hero) */
+@keyframes expSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.exp-reveal {
+  opacity: 0;
+  animation: expSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.exp-reveal-1 { animation-delay: 0.2s; }
+.exp-reveal-2 { animation-delay: 0.4s; }
+.exp-reveal-3 { animation-delay: 0.6s; }
+.exp-reveal-4 { animation-delay: 0.9s; }
+.exp-reveal-5 { animation-delay: 1.2s; }
+
+/* Pulsing glow for the "active" timeline dot */
+@keyframes timelinePulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 16px 4px rgba(220, 38, 38, 0.15);
+  }
+}
+
+.timeline-pulse {
+  animation: timelinePulse 2.5s ease-in-out infinite;
+}
+
+/* ── Experience person cutout — same effect as hero (no animation) ── */
+
+.exp-person-cutout {
+  z-index: 20;
+  filter: 
+    drop-shadow(0 0 6px rgba(6, 182, 212, 0.5))
+    drop-shadow(0 0 20px rgba(6, 182, 212, 0.2))
+    drop-shadow(0 0 40px rgba(220, 38, 38, 0.1));
+}
+
+/* ── Expand / collapse details ── */
+
+.exp-details-wrapper {
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.4s ease;
+}
+
+.exp-details-closed {
+  max-height: 0;
+  opacity: 0;
+}
+
+.exp-details-open {
+  max-height: 300px;
+  opacity: 1;
+}
