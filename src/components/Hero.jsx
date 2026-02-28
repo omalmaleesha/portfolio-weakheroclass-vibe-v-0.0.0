@@ -71,37 +71,44 @@ const HeroSection = () => {
             </ul>
           </nav>
 
-          {/* Mobile hamburger */}
+          {/* Mobile hamburger — stays in header visually but button handled separately */}
+          <div className="md:hidden w-5 h-5"></div>
+        </header>
+      </div>
+
+      {/* MOBILE HAMBURGER + MENU — above cutout */}
+      <div className="hero-mobile-nav-wrapper absolute top-0 right-0 container mx-auto px-4 sm:px-6 md:px-12 py-6 sm:py-8 pointer-events-none md:hidden">
+        <div className="flex justify-end py-3 sm:py-5 px-4 sm:px-6 md:px-10 mt-2">
           <button
-            className="md:hidden text-cyan-200/60 hover:text-cyan-300 transition-colors hero-hamburger"
+            className="pointer-events-auto text-cyan-200/60 hover:text-cyan-300 transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
           </button>
+        </div>
 
-          {/* Mobile menu overlay */}
-          {menuOpen && (
-            <div className="mobile-menu-overlay hero-mobile-menu absolute top-full right-0 mt-3 w-56 rounded-2xl backdrop-blur-xl bg-cyan-950/80 border border-cyan-500/15 shadow-2xl shadow-black/50 p-4 md:hidden">
-              <ul className="flex flex-col gap-4 text-sm font-medium tracking-[0.2em] uppercase text-cyan-200/60">
-                {[
-                  { label: 'Home', path: '/' },
-                  { label: 'Projects', path: '/projects' },
-                  { label: 'Experience', path: '/experience' },
-                ].map((item) => (
-                  <li key={item.label}>
-                    <Link
-                      to={item.path}
-                      className="block py-2 px-3 rounded-lg hover:bg-cyan-500/10 hover:text-cyan-300 transition-all duration-300"
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </header>
+        {/* Mobile menu overlay */}
+        {menuOpen && (
+          <div className="mobile-menu-overlay pointer-events-auto absolute right-4 sm:right-6 top-[4.5rem] sm:top-[5.5rem] w-56 rounded-2xl backdrop-blur-xl bg-cyan-950/80 border border-cyan-500/15 shadow-2xl shadow-black/50 p-4">
+            <ul className="flex flex-col gap-4 text-sm font-medium tracking-[0.2em] uppercase text-cyan-200/60">
+              {[
+                { label: 'Home', path: '/' },
+                { label: 'Projects', path: '/projects' },
+                { label: 'Experience', path: '/experience' },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link
+                    to={item.path}
+                    className="block py-2 px-3 rounded-lg hover:bg-cyan-500/10 hover:text-cyan-300 transition-all duration-300"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
 
       {/* 3. CONTENT WRAPPER — on top of cutout on mobile */}

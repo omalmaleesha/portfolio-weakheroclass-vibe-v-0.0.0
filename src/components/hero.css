@@ -77,14 +77,9 @@
   animation: menuFadeIn 0.25s ease forwards;
 }
 
-/* Mobile: hamburger + menu on top of cutout */
-.hero-hamburger {
-  position: relative;
-  z-index: 60;
-}
-
-.hero-mobile-menu {
-  z-index: 60;
+/* Mobile: hamburger + dropdown above cutout */
+.hero-mobile-nav-wrapper {
+  z-index: 70;
 }
 
 @keyframes menuFadeIn {
