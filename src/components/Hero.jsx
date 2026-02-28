@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaLinkedinIn, FaGithub, FaBehance, FaDribbble, FaBars, FaTimes } from 'react-icons/fa';
+import { FaLinkedinIn, FaGithub, FaBehance, FaDribbble, FaBars, FaTimes, FaEnvelope, FaCopy, FaCheck } from 'react-icons/fa';
 import './hero.css';
 
 const HeroSection = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText('omalmaleesha03@gmail.com');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     // MAIN SECTION: Weak Hero Class — cold, desaturated, gritty
@@ -125,13 +133,76 @@ const HeroSection = () => {
             
             {/* CTA Buttons */}
             <div className="hero-reveal hero-reveal-4 flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
-              <button className="group relative bg-red-600/40 backdrop-blur-md border border-red-500/30 text-white px-8 sm:px-10 py-2.5 sm:py-3 rounded-full font-semibold overflow-hidden transition-all duration-300 hover:bg-red-600/60 hover:shadow-lg hover:shadow-red-600/30 hover:border-red-400/50 text-sm sm:text-base">
+              <a href={`${import.meta.env.BASE_URL}Resume (Maleesha).pdf`} download="Omal_Maleesha_Resume.pdf" className="group relative bg-red-600/40 backdrop-blur-md border border-red-500/30 text-white px-8 sm:px-10 py-2.5 sm:py-3 rounded-full font-semibold overflow-hidden transition-all duration-300 hover:bg-red-600/60 hover:shadow-lg hover:shadow-red-600/30 hover:border-red-400/50 text-sm sm:text-base text-center">
                 <span className="relative z-10">RESUME</span>
-              </button>
-              <button className="backdrop-blur-md bg-cyan-500/10 border border-cyan-400/30 sm:border-cyan-500/20 px-8 sm:px-10 py-2.5 sm:py-3 rounded-full font-medium tracking-wide text-cyan-100/80 sm:text-cyan-200/60 hover:bg-cyan-500/20 hover:border-cyan-400/50 hover:text-cyan-300 transition-all duration-300 text-sm sm:text-base">
+              </a>
+              <button
+                onClick={() => setContactOpen(!contactOpen)}
+                className="backdrop-blur-md bg-cyan-500/10 border border-cyan-400/30 sm:border-cyan-500/20 px-8 sm:px-10 py-2.5 sm:py-3 rounded-full font-medium tracking-wide text-cyan-100/80 sm:text-cyan-200/60 hover:bg-cyan-500/20 hover:border-cyan-400/50 hover:text-cyan-300 transition-all duration-300 text-sm sm:text-base">
                 CONTACT ME
               </button>
             </div>
+
+            {/* Contact popup — cinematic glassmorphism */}
+            {contactOpen && (
+              <div className="contact-popup relative max-w-sm">
+                {/* Glassmorphism card */}
+                <div className="relative backdrop-blur-xl bg-cyan-950/60 border border-cyan-500/15 rounded-2xl p-5 sm:p-6 shadow-2xl shadow-black/50">
+                  
+                  {/* Close button */}
+                  <button
+                    onClick={() => setContactOpen(false)}
+                    className="absolute top-3 right-3 text-cyan-200/30 hover:text-cyan-300 transition-colors duration-300"
+                  >
+                    <FaTimes size={14} />
+                  </button>
+
+                  {/* Decorative accent */}
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="block w-6 h-[2px] bg-red-500"></span>
+                    <span className="text-red-400/70 text-[10px] sm:text-xs font-semibold tracking-[0.3em] uppercase">
+                      Get in Touch
+                    </span>
+                  </div>
+
+                  {/* Email row */}
+                  <div className="flex items-center gap-3 mb-4 group">
+                    <div className="flex-shrink-0 w-9 h-9 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+                      <FaEnvelope className="text-red-400/70" size={14} />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <span className="text-cyan-300/30 text-[10px] tracking-[0.3em] uppercase block">Email</span>
+                      <p className="text-sm text-cyan-100/70 truncate">omalmaleesha03@gmail.com</p>
+                    </div>
+                    <button
+                      onClick={handleCopyEmail}
+                      className="flex-shrink-0 text-cyan-300/30 hover:text-cyan-300 transition-colors duration-300"
+                      title="Copy email"
+                    >
+                      {copied ? <FaCheck size={14} className="text-teal-400" /> : <FaCopy size={14} />}
+                    </button>
+                  </div>
+
+                  {/* LinkedIn row */}
+                  <a
+                    href="https://www.linkedin.com/in/omal-maleesha-5a5171311"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 group hover:bg-cyan-500/5 rounded-xl p-1 -m-1 transition-all duration-300"
+                  >
+                    <div className="flex-shrink-0 w-9 h-9 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center group-hover:border-cyan-400/40 transition-colors duration-300">
+                      <FaLinkedinIn className="text-cyan-400/60 group-hover:text-cyan-300" size={14} />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <span className="text-cyan-300/30 text-[10px] tracking-[0.3em] uppercase block">LinkedIn</span>
+                      <p className="text-sm text-cyan-100/70 group-hover:text-cyan-200/80 transition-colors duration-300 truncate">Omal Maleesha</p>
+                    </div>
+                    <span className="text-cyan-500/20 text-xs tracking-widest group-hover:text-cyan-400/50 transition-colors duration-300">→</span>
+                  </a>
+
+                </div>
+              </div>
+            )}
 
             {/* Contact strip */}
             <div className="hero-reveal hero-reveal-5 flex flex-wrap gap-x-10 gap-y-3 pt-3 sm:pt-4 mt-1 sm:mt-2">
