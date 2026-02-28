@@ -19,11 +19,11 @@ const HeroSection = () => {
       {/* 1. DARK TEAL OVERLAY: Stronger on mobile so text is readable over cutout */}
       <div className="absolute inset-0 bg-gradient-to-b from-cyan-950/90 via-slate-950/85 to-slate-950/95 sm:from-cyan-950/80 sm:via-slate-950/70 sm:to-slate-950/90 z-0"></div>
 
-      {/* PERSON CUTOUT — on top of everything including header */}
+      {/* PERSON CUTOUT — behind content on mobile, on top on desktop */}
       <img 
         src={`${import.meta.env.BASE_URL}backgroundperson.png`}
         alt="Profile" 
-        className="person-cutout absolute inset-0 w-full h-full object-cover object-center z-50 pointer-events-none select-none"
+        className="person-cutout absolute inset-0 w-full h-full object-cover object-center z-5 sm:z-50 pointer-events-none select-none"
       />
 
       {/* Quote — hidden on mobile, shown on md+ */}
