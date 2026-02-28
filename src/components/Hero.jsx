@@ -23,7 +23,7 @@ const HeroSection = () => {
       <img 
         src={`${import.meta.env.BASE_URL}backgroundperson.png`}
         alt="Profile" 
-        className="person-cutout absolute inset-0 w-full h-full object-cover object-center z-5 sm:z-50 pointer-events-none select-none"
+        className="person-cutout absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none"
       />
 
       {/* Quote — hidden on mobile, shown on md+ */}
@@ -103,32 +103,32 @@ const HeroSection = () => {
             {/* Decorative accent line + tagline */}
             <div className="hero-reveal hero-reveal-1 flex items-center gap-3 sm:gap-4">
               <span className="block w-8 sm:w-10 h-[2px] bg-red-500"></span>
-              <span className="text-red-400 text-[10px] sm:text-xs md:text-sm font-semibold tracking-[0.3em] sm:tracking-[0.4em] uppercase">
+              <span className="text-red-300 sm:text-red-400 text-[10px] sm:text-xs md:text-sm font-semibold tracking-[0.3em] sm:tracking-[0.4em] uppercase">
                 Software Engineer
               </span>
             </div>
 
             {/* Main name — cold teal cinematic tracking */}
             <h1 className="hero-reveal hero-reveal-2 leading-none">
-              <span className="block text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-cyan-100/90">
+              <span className="block text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-cyan-50 sm:text-cyan-100/90">
                 OMAL
               </span>
-              <span className="block text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-400 to-teal-300 bg-clip-text text-transparent mt-1">
+              <span className="block text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-300 sm:from-cyan-400 to-teal-200 sm:to-teal-300 bg-clip-text text-transparent mt-1">
                 MALEESHA
               </span>
             </h1>
 
             {/* Subtitle */}
-            <p className="hero-reveal hero-reveal-3 text-sm sm:text-base md:text-xl text-cyan-200/40 font-light tracking-wide leading-relaxed max-w-lg">
+            <p className="hero-reveal hero-reveal-3 text-sm sm:text-base md:text-xl text-cyan-100/70 sm:text-cyan-200/40 font-light tracking-wide leading-relaxed max-w-lg">
               Analyze complex problems and design scalable, efficient solutions that meet performance and maintainability standards.
             </p>
             
             {/* CTA Buttons */}
             <div className="hero-reveal hero-reveal-4 flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
-              <button className="group relative bg-red-600 text-white px-8 sm:px-10 py-2.5 sm:py-3 rounded-full font-semibold overflow-hidden transition-all duration-300 hover:bg-red-500 hover:shadow-lg hover:shadow-red-600/30 text-sm sm:text-base">
+              <button className="group relative bg-red-600/40 backdrop-blur-md border border-red-500/30 text-white px-8 sm:px-10 py-2.5 sm:py-3 rounded-full font-semibold overflow-hidden transition-all duration-300 hover:bg-red-600/60 hover:shadow-lg hover:shadow-red-600/30 hover:border-red-400/50 text-sm sm:text-base">
                 <span className="relative z-10">RESUME</span>
               </button>
-              <button className="bg-transparent border border-cyan-500/20 px-8 sm:px-10 py-2.5 sm:py-3 rounded-full font-medium tracking-wide text-cyan-200/60 hover:border-cyan-400/50 hover:text-cyan-300 transition-all duration-300 text-sm sm:text-base">
+              <button className="backdrop-blur-md bg-cyan-500/10 border border-cyan-400/30 sm:border-cyan-500/20 px-8 sm:px-10 py-2.5 sm:py-3 rounded-full font-medium tracking-wide text-cyan-100/80 sm:text-cyan-200/60 hover:bg-cyan-500/20 hover:border-cyan-400/50 hover:text-cyan-300 transition-all duration-300 text-sm sm:text-base">
                 CONTACT ME
               </button>
             </div>
@@ -136,8 +136,8 @@ const HeroSection = () => {
             {/* Contact strip */}
             <div className="hero-reveal hero-reveal-5 flex flex-wrap gap-x-10 gap-y-3 pt-3 sm:pt-4 mt-1 sm:mt-2">
               <div>
-                <span className="text-cyan-300/25 text-[10px] sm:text-xs tracking-[0.3em] uppercase">Email</span>
-                <p className="text-xs sm:text-sm text-red-400 mt-1">omalmaleesha03@gmail.com</p>
+                <span className="text-cyan-200/50 sm:text-cyan-300/25 text-[10px] sm:text-xs tracking-[0.3em] uppercase">Email</span>
+                <p className="text-xs sm:text-sm text-red-300 sm:text-red-400 mt-1">omalmaleesha03@gmail.com</p>
               </div>
             </div>
 
@@ -145,13 +145,13 @@ const HeroSection = () => {
         </main>
 
         {/* --- FOOTER: Social Icons --- */}
-        <footer className="py-4 sm:py-6 border-t border-cyan-500/10 flex justify-between items-center text-xs sm:text-sm text-cyan-200/30">
+        <footer className="py-4 sm:py-6 border-t border-cyan-500/10 flex justify-between items-center text-xs sm:text-sm text-cyan-100/50 sm:text-cyan-200/30">
           <div>© 2026 Omal Maleesha.</div>
           <div className="flex items-center gap-4 sm:gap-6">
-            <a href="#" className="hover:text-cyan-400 transition-colors duration-300"><FaLinkedinIn size={16} /></a>
-            <a href="#" className="hover:text-cyan-400 transition-colors duration-300"><FaGithub size={16} /></a>
-            <a href="#" className="hover:text-cyan-400 transition-colors duration-300"><FaBehance size={16} /></a>
-            <a href="#" className="hover:text-cyan-400 transition-colors duration-300"><FaDribbble size={16} /></a>
+            <a href="#" className="text-cyan-100/50 sm:text-cyan-200/30 hover:text-cyan-400 transition-colors duration-300"><FaLinkedinIn size={16} /></a>
+            <a href="#" className="text-cyan-100/50 sm:text-cyan-200/30 hover:text-cyan-400 transition-colors duration-300"><FaGithub size={16} /></a>
+            <a href="#" className="text-cyan-100/50 sm:text-cyan-200/30 hover:text-cyan-400 transition-colors duration-300"><FaBehance size={16} /></a>
+            <a href="#" className="text-cyan-100/50 sm:text-cyan-200/30 hover:text-cyan-400 transition-colors duration-300"><FaDribbble size={16} /></a>
           </div>
         </footer>
       </div>
