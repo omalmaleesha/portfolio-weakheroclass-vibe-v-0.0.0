@@ -7,31 +7,33 @@ import './hero.css';
 const experiences = [
   {
     role: 'Trainee Software Engineer',
-    duration: '7 Months',
+    company: 'SYIGEN (Pvt) Ltd',
+    duration: '2024 Dec – 2025 Jul',
     status: 'completed',
     description:
-      'Learned the fundamentals of real-world software development. Worked on bug fixes, code reviews, and feature implementations under senior guidance.',
+      'Gained hands-on experience in Next.js, React, AI Agents and Python by developing workflow-based backend systems and API integrations.',
     details: [
-      'Fixed critical production bugs and participated in code reviews',
-      'Implemented UI components using React and Tailwind CSS',
-      'Wrote unit tests and improved code coverage by 20%',
-      'Collaborated with senior engineers in agile sprints',
-      'Gained hands-on experience with Git, CI/CD pipelines',
+      'Developed workflow-based backend systems and API integrations using Spring Boot and Python',
+      'Mastered core design patterns (MVC, Layered) and modern frameworks including Next.js and React',
+      'Participated in code reviews, debugging, and testing to ensure high-quality software delivery',
+      'Worked effectively in Agile environments — sprint planning, daily stand-ups, and retrospectives',
+      'Assisted in designing RESTful APIs ensuring system integration and performance optimization',
     ],
     icon: <FaBriefcase />,
   },
   {
     role: 'Associate Software Engineer',
-    duration: '6 Months',
+    company: 'ESupport (Pvt) Ltd',
+    duration: '2025 Sep – 2026 Feb',
     status: 'completed',
     description:
-      'Took ownership of modules and delivered production-ready features. Collaborated across teams to ship scalable, maintainable solutions.',
+      'Spearheaded intern mentorship and technical alignment, improving development quality and accelerating feature delivery across sprints.',
     details: [
-      'Led development of key feature modules end-to-end',
-      'Designed and built RESTful APIs with Spring Boot',
-      'Optimized database queries reducing load time by 35%',
-      'Mentored new trainees during onboarding process',
-      'Deployed microservices to cloud infrastructure',
+      'Engineered scalable RESTful architectures and optimized database performance for growing user demand',
+      'Oversaw end-to-end SDLC processes, driving stable deployments and reducing post-release defects',
+      'Converted business requirements into production-ready features through Agile collaboration',
+      'Strengthened application security through structured Git workflows and secure coding standards',
+      'Mentored interns and aligned technical direction to improve development velocity',
     ],
     icon: <FaBriefcase />,
   },
@@ -215,13 +217,20 @@ const Experience = () => {
                         }`}
                       >
                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2 mb-1">
-                          <h3 className={`font-bold tracking-tight transition-all duration-500 ${
-                            isCollapsed ? 'text-xs sm:text-sm' : 'text-sm sm:text-base md:text-lg'
-                          } ${
-                            exp.status === 'active' ? 'text-red-400' : 'text-cyan-100/80'
-                          }`}>
-                            {exp.role}
-                          </h3>
+                          <div>
+                            <h3 className={`font-bold tracking-tight transition-all duration-500 ${
+                              isCollapsed ? 'text-xs sm:text-sm' : 'text-sm sm:text-base md:text-lg'
+                            } ${
+                              exp.status === 'active' ? 'text-red-400' : 'text-cyan-100/80'
+                            }`}>
+                              {exp.role}
+                            </h3>
+                            {exp.company && !isCollapsed && (
+                              <span className="text-[10px] sm:text-xs text-cyan-300/30 font-medium tracking-[0.15em] uppercase">
+                                {exp.company}
+                              </span>
+                            )}
+                          </div>
                           <span
                             className={`text-xs font-medium tracking-[0.3em] uppercase px-3 py-1 rounded-full w-fit transition-all duration-500 ${
                               isCollapsed ? 'hidden' : 'block'

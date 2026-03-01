@@ -1,60 +1,60 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaGithub, FaExternalLinkAlt, FaReact, FaJava, FaNodeJs, FaDatabase, FaBars, FaTimes } from 'react-icons/fa';
-import { SiSpringboot, SiTailwindcss, SiMongodb, SiFirebase } from 'react-icons/si';
+import { FaGithub, FaExternalLinkAlt, FaReact, FaJava, FaNodeJs, FaDatabase, FaBars, FaTimes, FaPython, FaRobot } from 'react-icons/fa';
+import { SiSpringboot, SiTailwindcss, SiMongodb, SiFirebase, SiFastapi, SiNextdotjs, SiElasticsearch, SiPostgresql } from 'react-icons/si';
 import './projects.css';
 import './hero.css';
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    description: 'Full-stack e-commerce application with payment integration, real-time inventory tracking, and admin dashboard.',
+    title: 'HelpDesk RAG Chatbot',
+    description: 'AI-powered support assistant using Retrieval-Augmented Generation with semantic search, cross-encoder reranking, and human-agent escalation.',
     tech: [
-      { name: 'React', icon: <FaReact /> },
-      { name: 'Node.js', icon: <FaNodeJs /> },
-      { name: 'MongoDB', icon: <SiMongodb /> },
+      { name: 'Python', icon: <FaPython /> },
+      { name: 'FastAPI', icon: <SiFastapi /> },
+      { name: 'Next.js', icon: <SiNextdotjs /> },
     ],
     highlights: [
-      'Built responsive UI with React & Tailwind CSS',
-      'Implemented JWT authentication & role-based access',
-      'Integrated Stripe payment gateway',
-      'Real-time order tracking with WebSocket',
+      'RAG pipeline with ChromaDB vector store & semantic search',
+      'Cross-encoder reranking (ms-marco-MiniLM-L-6-v2)',
+      'Auto answer verification & human-agent escalation',
+      'Semantic caching for near-duplicate queries (0.92 threshold)',
     ],
-    github: '#',
+    github: 'https://github.com/omalmaleesha/HelpDesk-RAG-Chatbot',
     live: '#',
   },
   {
-    title: 'Task Management System',
-    description: 'Collaborative project management tool with drag-and-drop boards, team assignments, and progress analytics.',
+    title: 'Real Estate Property Search Engine',
+    description: 'Full-stack property search platform with geospatial queries, faceted filtering, and interactive map-based browsing powered by Elasticsearch.',
     tech: [
       { name: 'Spring Boot', icon: <SiSpringboot /> },
-      { name: 'React', icon: <FaReact /> },
-      { name: 'MySQL', icon: <FaDatabase /> },
+      { name: 'Elasticsearch', icon: <SiElasticsearch /> },
+      { name: 'PostgreSQL', icon: <SiPostgresql /> },
     ],
     highlights: [
-      'REST API with Spring Boot & Spring Security',
-      'Drag-and-drop Kanban board interface',
-      'Team collaboration with real-time updates',
-      'Automated email notifications',
+      'Geo-distance queries for radius-based property search',
+      'Real-time title suggestions with Elasticsearch indexing',
+      'Faceted search by price, rooms, city, type & availability',
+      'React + Leaflet map view with list/map toggle',
     ],
-    github: '#',
+    github: 'https://github.com/omalmaleesha/Real-State-Property-Search-Engine',
     live: '#',
   },
   {
-    title: 'Portfolio Website',
-    description: 'Cinematic personal portfolio inspired by Weak Hero Class K-drama aesthetic with layered image effects.',
+    title: 'Healthcare AI Agent',
+    description: 'AI-driven healthcare app providing personalized health recommendations using Groq LLM with voice narration and risk assessment.',
     tech: [
-      { name: 'React', icon: <FaReact /> },
-      { name: 'Tailwind', icon: <SiTailwindcss /> },
-      { name: 'Firebase', icon: <SiFirebase /> },
+      { name: 'Python', icon: <FaPython /> },
+      { name: 'FastAPI', icon: <SiFastapi /> },
+      { name: 'Next.js', icon: <SiNextdotjs /> },
     ],
     highlights: [
-      'Weak Hero Class inspired cold teal/red design',
-      'Layered PNG cutout effects with CSS animations',
-      'Fully responsive single-page sections',
-      'Deployed on Firebase Hosting',
+      'Personalized health analysis powered by Groq LLM',
+      'Text-to-speech narration via Google TTS API',
+      'AI risk assessment with actionable care plans',
+      'Responsive UI with Shadcn/UI & React Hook Form + Zod',
     ],
-    github: '#',
+    github: 'https://github.com/omalmaleesha/Medical-learning-AI-Agent',
     live: '#',
   },
 ];

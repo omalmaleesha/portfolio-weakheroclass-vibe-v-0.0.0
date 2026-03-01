@@ -42,10 +42,10 @@
     drop-shadow(0 0 40px rgba(220, 38, 38, 0.1));
 }
 
-/* Desktop: cutout on top of everything */
+/* Desktop: cutout on top of everything including header */
 @media (min-width: 640px) {
   .person-cutout {
-    z-index: 50;
+    z-index: 55;
   }
 }
 
